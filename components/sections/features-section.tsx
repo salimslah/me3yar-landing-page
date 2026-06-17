@@ -1,118 +1,197 @@
 'use client'
 
-const features = [
-  {
-    icon: 'chart',
-    title: 'لوحات تحكم فورية',
-    description: 'شاهد مؤشرات الأداء والقياسات أثناء حدوثها. لا تأخير، لا مفاجآت.'
-  },
-  {
-    icon: 'target',
-    title: 'توافق الأهداف',
-    description: 'ربط الإستراتيجية بالتنفيذ. حافظ على تركيز الفرق على ما يهم.'
-  },
-  {
-    icon: 'users',
-    title: 'التعاون بين الفرق',
-    description: 'اعمل معاً على المبادرات والتقدم. تم تصميمها للعمل الجماعي.'
-  },
-  {
-    icon: 'zap',
-    title: 'إعداد سريع',
-    description: 'ابدأ في دقائق، وليس أشهر. واجهة بسيطة وبديهية.'
-  },
-  {
-    icon: 'shield',
-    title: 'أمان المستوى الإنتاجي',
-    description: 'بيانتك آمنة. معتمدة من SOC 2 مع حماية متقدمة.'
-  },
-  {
-    icon: 'messageCircle',
-    title: 'رؤى ذكية',
-    description: 'التوصيات المدعومة بالذكاء الاصطناعي تساعدك على اكتشاف الاتجاهات والفرص.'
-  }
-]
+import React from 'react'
 
-const IconRenderer = ({ icon }: { icon: string }) => {
-  const icons: { [key: string]: React.ReactNode } = {
-    chart: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
+interface Feature {
+  tag: string
+  title: string
+  description: string
+  linkText: string
+  linkHref: string
+  bgClass: string
+  tagBgClass: string
+  tagTextClass: string
+  linkColorClass: string
+  graphic: React.ReactNode
+}
+
+const features: Feature[] = [
+  {
+    tag: 'بطاقة الأداء المتوازن (BSC)',
+    title: 'ترجمة إستراتيجيتك إلى مؤشرات أداء دقيقة',
+    description: 'حوّل رؤيتك وأهدافك الكبرى إلى أهداف تشغيلية موزعة على المنظورات الأربعة لضمان التوازن والتركيز المستمر.',
+    linkText: 'تصفح بطاقات الأداء',
+    linkHref: '#',
+    bgClass: 'bg-[#FCF7F0]/90 hover:bg-[#FCF7F0]', // soft peach/sand gold
+    tagBgClass: 'bg-white border border-[#E8DFD3]',
+    tagTextClass: 'text-[#8B6F47]',
+    linkColorClass: 'text-[#8B6F47] hover:text-[#2D7D5A]',
+    graphic: (
+      <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80">
+        <defs>
+          <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#D4A574" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#8B6F47" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(100, 100) rotate(45)">
+          <rect x="-65" y="-65" width="50" height="50" rx="16" fill="url(#gold-grad)" />
+          <rect x="15" y="-65" width="50" height="50" rx="16" fill="url(#gold-grad)" />
+          <rect x="-65" y="15" width="50" height="50" rx="16" fill="url(#gold-grad)" />
+          <rect x="15" y="15" width="50" height="50" rx="16" fill="url(#gold-grad)" />
+          {/* Inner details for premium look */}
+          <circle cx="-40" cy="-40" r="6" fill="#D4A574" opacity="0.3" />
+          <circle cx="40" cy="-40" r="6" fill="#D4A574" opacity="0.3" />
+          <circle cx="-40" cy="40" r="6" fill="#D4A574" opacity="0.3" />
+          <circle cx="40" cy="40" r="6" fill="#D4A574" opacity="0.3" />
+        </g>
       </svg>
-    ),
-    target: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <circle cx="12" cy="12" r="6" />
-        <circle cx="12" cy="12" r="2" />
+    )
+  },
+  {
+    tag: 'مساحة العمل الإستراتيجية',
+    title: 'ربط المبادرات والمشاريع بالنتائج مباشرة',
+    description: 'مساحة موحدة تمكنك من ربط المشاريع والمهام بالأهداف الإستراتيجية للمنظمة لضمان محاذاة جهود فريقك بنسبة 100%.',
+    linkText: 'استكشف مساحة العمل',
+    linkHref: '#',
+    bgClass: 'bg-[#F0F5FA]/90 hover:bg-[#F0F5FA]', // soft ice blue
+    tagBgClass: 'bg-white border border-[#D0E0EF]',
+    tagTextClass: 'text-[#4A7F9F]',
+    linkColorClass: 'text-[#4A7F9F] hover:text-[#2D7D5A]',
+    graphic: (
+      <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80">
+        <defs>
+          <linearGradient id="blue-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#4A7F9F" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#9AC1D9" stopOpacity="0.05" />
+          </linearGradient>
+          <linearGradient id="blue-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#9AC1D9" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#4A7F9F" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        {/* Abstract shapes matching the image's top-right style */}
+        <path d="M40 40 C 40 90, 90 90, 90 40 Z" fill="url(#blue-grad-1)" transform="translate(10, 20)" />
+        <rect x="110" y="20" width="50" height="50" rx="16" fill="url(#blue-grad-2)" />
+        <rect x="40" y="90" width="50" height="50" rx="16" fill="url(#blue-grad-2)" />
+        <path d="M110 90 C 160 90, 160 140, 110 140 Z" fill="url(#blue-grad-1)" />
       </svg>
-    ),
-    users: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    )
+  },
+  {
+    tag: 'إدارة المخاطر الإستراتيجية',
+    title: 'توقع التحديات وبادر بالاستجابة الفعالة',
+    description: 'حدد المخاطر المحتملة، وقيّم شدة تأثيرها واحتمالية حدوثها، واربطها ببطاقة الأداء لبناء إستراتيجية مرنة ومحصنة.',
+    linkText: 'عرض لوحة المخاطر',
+    linkHref: '#',
+    bgClass: 'bg-[#FAF4FC]/90 hover:bg-[#FAF4FC]', // soft lavender/purple
+    tagBgClass: 'bg-white border border-[#EADDF2]',
+    tagTextClass: 'text-[#9C6ADE]',
+    linkColorClass: 'text-[#9C6ADE] hover:text-[#2D7D5A]',
+    graphic: (
+      <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80">
+        <defs>
+          <linearGradient id="purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#9C6ADE" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#D2B5FA" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        {/* Curving, overlapping ribbon path inspired by the bottom-left purple graphic */}
+        <path d="M30 50 Q 80 50 100 100 T 170 150 Q 120 150 100 100 T 30 50 Z" fill="url(#purple-grad)" />
+        <path d="M170 50 Q 120 50 100 100 T 30 150 Q 80 150 100 100 T 170 50 Z" fill="url(#purple-grad)" opacity="0.7" />
       </svg>
-    ),
-    zap: (
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-    shield: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    messageCircle: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    )
+  },
+  {
+    tag: 'مراقبة وتحليلات الأداء',
+    title: 'لوحات تحكم فورية لقرارات مدروسة',
+    description: 'راقب مؤشرات قياس الأداء الرئيسية (KPIs) ونسب الإنجاز مباشرة، واحصل على تقارير تفصيلية تدعم اتخاذ القرار.',
+    linkText: 'استكشف لوحة التحليلات',
+    linkHref: '#',
+    bgClass: 'bg-[#F2FAF5]/90 hover:bg-[#F2FAF5]', // soft green matching primary
+    tagBgClass: 'bg-white border border-[#D5EFE0]',
+    tagTextClass: 'text-[#2D7D5A]',
+    linkColorClass: 'text-[#2D7D5A] hover:text-[#8B6F47]',
+    graphic: (
+      <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80">
+        <defs>
+          <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2D7D5A" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#A3E2C3" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(100, 100) rotate(15)">
+          <rect x="-40" y="-80" width="60" height="60" rx="20" fill="url(#green-grad)" />
+          <rect x="-20" y="-20" width="60" height="60" rx="20" fill="url(#green-grad)" />
+          <rect x="-60" y="20" width="60" height="60" rx="20" fill="url(#green-grad)" />
+        </g>
       </svg>
     )
   }
-  
-  return icons[icon] || null
-}
+]
 
 export function FeaturesSection() {
   return (
-    <section className="w-full py-24 px-6 sm:px-8 bg-background">
+    <section className="w-full py-24 px-6 sm:px-8 bg-background relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            كل ما تحتاجه للتنفيذ
+        {/* Section Header */}
+        <div className="mb-20 text-center space-y-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
+            ضاعف كفاءة سير عملك
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            جميع الأدوات لإدارة الإستراتيجية الحديثة في مكان واحد.
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
+            جميع الأدوات لإدارة الإستراتيجية والأداء والمبادرات في لوحة قيادة متكاملة.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 2x2 Responsive Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl border border-border p-8 hover:border-primary/40 hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className={`group relative ${feature.bgClass} rounded-3xl border border-border/60 p-8 sm:p-10 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 min-h-[340px]`}
             >
-              {/* Gradient accent on top */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-              {/* Icon container with modern style */}
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-primary mb-5 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all">
-                <IconRenderer icon={feature.icon} />
+              {/* Graphic container (absolute positioned on the left/start side to prevent overlapping with RTL text) */}
+              <div className="absolute bottom-0 left-0 pointer-events-none select-none transition-transform duration-500 group-hover:scale-105 group-hover:-translate-x-2">
+                {feature.graphic}
               </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {feature.description}
-              </p>
+              {/* Card Content */}
+              <div className="relative z-10 space-y-6 max-w-[75%] sm:max-w-[70%]">
+                {/* Tag */}
+                <div>
+                  <span className={`inline-block text-xs font-bold ${feature.tagBgClass} ${feature.tagTextClass} px-3 py-1.5 rounded-full shadow-sm`}>
+                    {feature.tag}
+                  </span>
+                </div>
 
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                {/* Title */}
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight tracking-tight">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
+                  {feature.description}
+                </p>
+              </div>
+
+              {/* Link at bottom */}
+              <div className="relative z-10 pt-6 mt-auto">
+                <a
+                  href={process.env.NEXT_PUBLIC_APP_URL || '#'}
+                  className={`inline-flex items-center gap-1.5 text-sm font-bold ${feature.linkColorClass} transition-colors group/link cursor-pointer`}
+                >
+                  <span>{feature.linkText}</span>
+                  <span className="inline-block transition-transform group-hover/link:-translate-x-1 duration-200">
+                    ←
+                  </span>
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -120,3 +199,4 @@ export function FeaturesSection() {
     </section>
   )
 }
+

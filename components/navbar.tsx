@@ -30,9 +30,12 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <button className="px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm">
+          <a 
+            href={process.env.NEXT_PUBLIC_APP_URL || '#'}
+            className="px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm cursor-pointer"
+          >
             ابدأ الآن
-          </button>
+          </a>
         </div>
       </div>
     </nav>

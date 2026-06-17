@@ -11,26 +11,26 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Me3yar - Strategic Performance & Balanced Scorecard Platform',
-  description: 'Translate your strategy into measurable excellence. Track KPIs, manage initiatives, and drive organizational performance with Me3yar.',
-  generator: 'v0.app',
+  title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',
+  description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة لضمان تحقيق أهداف منظمتك.',
+  generator: 'Me3yar Strategy Suite',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/favicon.ico',
     apple: '/apple-icon.png',
   },
+  openGraph: {
+    title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',
+    description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة.',
+    url: 'https://me3yar.com',
+    siteName: 'معيار - Me3yar',
+    locale: 'ar_SA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',
+    description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة.',
+  }
 }
 
 export const viewport: Viewport = {
