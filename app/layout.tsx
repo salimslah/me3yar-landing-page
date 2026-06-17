@@ -15,7 +15,11 @@ export const metadata: Metadata = {
   description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة لضمان تحقيق أهداف منظمتك.',
   generator: 'Me3yar Strategy Suite',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
     apple: '/apple-icon.png',
   },
   openGraph: {
