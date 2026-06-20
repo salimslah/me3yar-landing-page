@@ -1,10 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Tajawal, Geist_Mono } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import './globals.css'
+import '@emran-alhaddad/saudi-riyal-font/index.css'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  weight: ['200', '300', '400', '500', '700', '800', '900'],
+  variable: '--font-tajawal',
+})
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
@@ -48,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={`bg-background ${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ar" dir="rtl" className={`bg-background ${tajawal.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
         <Navbar />
         {children}

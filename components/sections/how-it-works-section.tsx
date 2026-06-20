@@ -130,7 +130,7 @@ export function HowItWorksSection() {
   ]
 
   return (
-    <section className="w-full py-28 px-6 sm:px-8 bg-[#FAF9F6] border-y border-border/40 relative overflow-hidden">
+    <section id="how" className="w-full py-28 px-6 sm:px-8 bg-[#FAF9F6] border-y border-border/40 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute -top-48 -right-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>

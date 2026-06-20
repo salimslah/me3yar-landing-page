@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border bg-background">
+    <footer id="footer" className="w-full border-t border-border bg-background">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -82,7 +82,14 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2024 معيار. جميع الحقوق محفوظة.</p>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <p>© 2026 معيار. جميع الحقوق محفوظة.</p>
+            <span className="text-muted-foreground/45">•</span>
+            <p className="flex items-center gap-1">
+              <span>بواسطة</span>
+              <a href="https://www.growth-side.co" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:underline">Growth-side</a>
+            </p>
+          </div>
           <div className="flex items-center gap-5">
             <a href="#" className="w-8 h-8 rounded-lg bg-muted/40 text-muted-foreground hover:bg-primary/10 hover:text-primary transition-all flex items-center justify-center border border-border/40" aria-label="LinkedIn">
               <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
