@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف التعريفي الشامل - منصة معيار</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D7D5A',
+                        secondary: '#D4A574',
+                        muted: '#71717A',
+                        foreground: '#2C2C2C',
+                        border: '#E8DFD3',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #525659;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .pdf-toolbar {
+            background-color: #323639;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .pdf-document-wrapper {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 40px;
+        }
+
+        .pdf-page {
+            background-color: #FFFFFF;
+            width: 210mm;
+            height: 297mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 10mm 15mm;
+            color: #2C2C2C;
+            box-sizing: border-box;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2D7D5A 0%, #3CA377 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .elegant-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E8DFD3;
+        }
+
+        .circle-bg {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background-color: #FFFFFF !important;
+            }
+            .pdf-toolbar {
+                display: none !important;
+            }
+            .pdf-document-wrapper {
+                margin-top: 0 !important;
+                padding-bottom: 0 !important;
+                gap: 0 !important;
+                display: block !important;
+            }
+            .pdf-page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important; /* Strict height to prevent overflow */
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            .pdf-page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pdf-toolbar no-print">
+        <div class="flex items-center gap-4">
+            <span class="font-bold text-sm tracking-widest text-gray-300">الملف_التعريفي_لمنصة_معيار</span>
+        </div>
+        <button onclick="window.print()" class="bg-[#2D7D5A] hover:bg-[#3CA377] text-white font-bold py-2 px-6 rounded transition-colors flex items-center gap-2 text-sm shadow">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            تصدير الملف
+        </button>
+    </div>
+
+    <div class="pdf-document-wrapper">
+
+        <!-- ================= PAGE 1 ================= -->
+        <div class="pdf-page">
+            <div class="circle-bg w-96 h-96 bg-primary/5 -top-24 -right-24 blur-3xl"></div>
+            <div class="circle-bg w-96 h-96 bg-secondary/10 bottom-10 -left-24 blur-3xl"></div>
+
+            <header class="relative z-10 text-center pt-10 pb-6">
+                <img src="/meyar-logo.png" alt="شعار معيار" class="w-40 mx-auto mb-6 mix-blend-multiply" />
+                
+                <h1 class="text-4xl font-black mb-4 text-foreground tracking-tight">منصة <span class="gradient-text">معيار</span></h1>
+                <p class="text-lg text-muted font-medium max-w-lg mx-auto leading-relaxed mb-6">
+                    المنصة الإستراتيجية الأولى لتوحيد الأداء، المبادرات، والمخاطر في مساحة عمل واحدة.
+                </p>
+
+                <div class="inline-flex items-center gap-3 px-4 py-2 bg-slate-50/50 border border-slate-200/60 rounded-full mx-auto shadow-sm">
+                    <span class="text-[11px] font-bold text-slate-500">بإدارة وتطوير</span>
+                    <div class="w-px h-4 bg-slate-300"></div>
+                    <img src="https://www.growth-side.co/logos/growth-side-brand.svg" alt="Growth Side" class="h-4 opacity-80 mix-blend-multiply" />
+                </div>
+            </header>
+
+            <main class="relative z-10 flex-grow">
+                <section class="mb-6">
+                    <h2 class="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
+                        <span class="w-1.5 h-6 bg-primary rounded-full block"></span>
+                        نظرة عامة
+                    </h2>
+                    <div class="elegant-card p-6 rounded-2xl">
+                        <p class="text-base leading-loose text-foreground">
+                            <strong class="text-primary">منصة معيار</strong> ليست مجرد أداة لتتبع المهام، بل هي منظومة سحابية متكاملة مصممة خصيصاً للجهات الحكومية والشركات الكبرى لتحقيق <strong>المواءمة الإستراتيجية</strong>. 
+                            تدمج المنصة بين قياس الأداء المتقدم، التخطيط التشغيلي، ومراقبة المخاطر لضمان ترجمة الرؤية القيادية إلى واقع ملموس بدقة وشفافية تامة.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="grid grid-cols-2 gap-4">
+                    <div class="elegant-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground mb-2">الرؤية</h3>
+                        <p class="text-muted leading-relaxed text-sm">
+                            أن نكون المعيار الذهبي والأكثر موثوقية في قيادة التحول الإستراتيجي وحوكمة الأداء المؤسسي في المنطقة.
+                        </p>
+                    </div>
+                    
+                    <div class="elegant-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-secondary/20 text-secondary rounded-xl flex items-center justify-center mb-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground mb-2">الرسالة</h3>
+                        <p class="text-muted leading-relaxed text-sm">
+                            تمكين صناع القرار من حوكمة الإنجازات وإدارة الميزانيات بكفاءة عبر تقنيات سحابية توفر تحليلات لحظية دقيقة.
+                        </p>
+                    </div>
+                </section>
+            </main>
+            <div class="text-center pt-4 text-muted text-xs font-bold mt-auto">١</div>
+        </div>
+
+        <!-- ================= PAGE 2 ================= -->
+        <div class="pdf-page">
+            <div class="circle-bg w-[500px] h-[500px] bg-primary/5 top-[30%] -right-32 blur-3xl"></div>
+            
+            <header class="relative z-10 pt-4 pb-4 border-b border-border/50 mb-6">
+                <h2 class="text-2xl font-black text-foreground mb-1">القدرات الإستراتيجية</h2>
+                <p class="text-muted text-sm">نظرة تفصيلية على محرك النظام الأساسي</p>
+            </header>
+
+            <main class="relative z-10 flex-grow space-y-4">
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-primary">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-lg">١</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">بطاقة الأداء المتوازن</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                صمم خرائط إستراتيجية متكاملة توزع الأهداف على المنظورات الأربعة (المالية، العملاء، العمليات، التعلم والنمو). يتيح النظام التحكم الكامل في أوزان الأهداف لضمان التركيز.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-secondary">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-secondary/20 text-secondary rounded-xl flex items-center justify-center font-bold text-lg">٢</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">إدارة الأهداف ومؤشرات القياس</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                سجل متكامل لإدارة المستهدفات والنتائج الفعلية. يدعم النظام تقسيم الفترات بشكل ربع سنوي وشهري ونصف سنوي، مع عرض التراكم الرقمي آلياً.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-blue-500">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-lg">٣</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">لوحة المبادرات والمشاريع التشغيلية</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                ربط مباشر بين الأهداف الكبرى ومشاريع التنفيذ. تابع الميزانية المخصصة مقابل المنصرف، وتواريخ البداية والنهاية، لتحديد نسبة الإنجاز اللحظي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-purple-500">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center font-bold text-lg">٤</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">لوحة القيادة التنفيذية</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                واجهة ذكية تقدم لصناع القرار ملخصاً مرئياً للأداء المؤسسي. تتضمن إشعارات فورية عن المؤشرات المتأخرة، المبادرات المتعثرة، والمخاطر الحرجة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="text-center pt-4 text-muted text-xs font-bold mt-auto">٢</div>
+        </div>
+
+        <!-- ================= PAGE 3 ================= -->
+        <div class="pdf-page">
+            <div class="circle-bg w-96 h-96 bg-secondary/10 top-0 -left-20 blur-3xl"></div>
+            
+            <header class="relative z-10 pt-4 pb-4 border-b border-border/50 mb-6">
+                <h2 class="text-2xl font-black text-foreground mb-1">الوحدات المتقدمة</h2>
+                <p class="text-muted text-sm">أدوات إضافية تضمن حوكمة شاملة وأداءً استثنائياً</p>
+            </header>
+
+            <main class="relative z-10 flex-grow space-y-4">
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-red-400">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-red-50 text-red-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">سجل المخاطر والرادار</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                تحديد المخاطر الإستراتيجية وقياس أثرها بناءً على احتمالية الحدوث وشدة التأثير. توفر راداراً بصرياً وسجلاً كاملاً لخطط التخفيف والملاك المسؤولين.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-blue-400">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">محرك استطلاعات الرضا</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                صمم استبيانات ذكية لقياس رضا العملاء وأصحاب المصلحة. يربط النظام نتائج الاستطلاعات مباشرة بمؤشرات الأداء الإستراتيجية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-primary">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">مصمم التقارير المخصص</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                توليد آلي لتقارير الأداء التفصيلية. يدعم تصدير ملفات جاهزة للطباعة والعرض للإدارة العليا، مع إمكانية تخصيص الهوية البصرية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elegant-card p-5 rounded-2xl border-r-4 border-r-purple-400">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-purple-50 text-purple-500 rounded-xl flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-foreground mb-1">إدارة الاجتماعات والهيكل التنظيمي</h4>
+                            <p class="text-muted leading-relaxed text-sm">
+                                أتمتة دعوات اجتماعات المراجعة الدورية، تدوين محاضر الاجتماعات، وربط القرارات بمهام مباشرة لأصحاب المصلحة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="text-center pt-4 text-muted text-xs font-bold mt-auto">٣</div>
+        </div>
+
+        <!-- ================= PAGE 4 ================= -->
+        <div class="pdf-page">
+            <header class="relative z-10 pt-4 pb-4 border-b border-border/50 mb-6">
+                <h2 class="text-2xl font-black text-foreground mb-1">الأمان والتسعير</h2>
+                <p class="text-muted text-sm">بنية تحتية موثوقة وباقات تتوافق مع متطلباتك</p>
+            </header>
+
+            <main class="relative z-10 flex-grow space-y-8">
+                
+                <section>
+                    <h3 class="text-xl font-bold text-foreground mb-4">السيادة الرقمية والموثوقية</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="elegant-card p-5 rounded-2xl">
+                            <h4 class="text-primary font-bold mb-1 text-sm">استضافة محلية بالكامل</h4>
+                            <p class="text-muted text-xs leading-relaxed">استضافة سحابية خوادمها داخل المملكة لضمان السيادة الكاملة على البيانات وسرعة الوصول العالية.</p>
+                        </div>
+                        <div class="elegant-card p-5 rounded-2xl">
+                            <h4 class="text-primary font-bold mb-1 text-sm">التشفير والعزل التام</h4>
+                            <p class="text-muted text-xs leading-relaxed">تشفير متقدم لبيانات النظام بالكامل، مع بيئة معزولة لكل مؤسسة لمنع تداخل البيانات.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-foreground mb-4">الباقات المتاحة</h3>
+                    <div class="space-y-3">
+                        <div class="elegant-card px-6 py-4 rounded-2xl border-r-4 border-r-slate-300 flex items-center justify-between bg-slate-50/50">
+                            <h4 class="text-lg font-bold text-foreground m-0">الباقة الأساسية</h4>
+                        </div>
+
+                        <div class="elegant-card px-6 py-4 rounded-2xl border-r-4 border-r-primary bg-primary/5 border border-primary/20 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <h4 class="text-lg font-bold text-foreground m-0">الباقة الاحترافية</h4>
+                                <span class="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full font-normal">الأكثر شيوعاً</span>
+                            </div>
+                        </div>
+
+                        <div class="elegant-card px-6 py-4 rounded-2xl border-r-4 border-r-secondary flex items-center justify-between bg-orange-50/30">
+                            <h4 class="text-lg font-bold text-foreground m-0">باقة المؤسسات والجهات الكبرى</h4>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer class="pt-6 text-center border-t border-border mt-auto">
+                <h4 class="font-bold text-primary text-lg mb-3">للبدء برحلة التحول الإستراتيجي</h4>
+                <div class="flex justify-center gap-6 text-xs font-bold text-foreground" dir="ltr">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        support@meyar.app
+                    </span>
+                </div>
+            </footer>
+            <div class="text-center pt-4 text-muted text-xs font-bold mt-auto">٤</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

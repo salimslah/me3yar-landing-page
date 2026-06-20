@@ -28,7 +28,7 @@ export function ProductShowcaseSection() {
               <span className="w-3.5 h-3.5 rounded-full bg-yellow-500"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-green-500"></span>
             </div>
-            <span className="text-xs font-semibold text-slate-400 select-none">me3yar.app/bsc-dashboard</span>
+            <span className="text-xs font-semibold text-slate-400 select-none">meyar.app/bsc-dashboard</span>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-4">
@@ -83,7 +83,7 @@ export function ProductShowcaseSection() {
               <span className="w-3.5 h-3.5 rounded-full bg-yellow-500"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-green-500"></span>
             </div>
-            <span className="text-xs font-semibold text-slate-400 select-none">me3yar.app/risk-registry</span>
+            <span className="text-xs font-semibold text-slate-400 select-none">meyar.app/risk-registry</span>
           </div>
 
           <div className="space-y-4">
@@ -118,7 +118,7 @@ export function ProductShowcaseSection() {
               <span className="w-3.5 h-3.5 rounded-full bg-yellow-500"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-green-500"></span>
             </div>
-            <span className="text-xs font-semibold text-slate-400 select-none">me3yar.app/analytics</span>
+            <span className="text-xs font-semibold text-slate-400 select-none">meyar.app/analytics</span>
           </div>
 
           <div className="flex items-center justify-between">
@@ -209,10 +209,10 @@ export function ProductShowcaseSection() {
             {/* Gallery Image Mockup 1 */}
             <div className="bg-[#1E293B] text-slate-100 rounded-2xl p-5 border border-slate-700/50 shadow-md space-y-4">
               <div className="flex justify-between border-b border-slate-800 pb-2 text-xs text-slate-400">
-                <span>تكاملات الأنظمة</span>
-                <span>me3yar.app/integrations</span>
+                <span>الاستطلاعات والآراء</span>
+                <span>meyar.app/surveys</span>
               </div>
-              <p className="text-xs text-slate-300 font-bold">المزامنة مع Slack و Excel</p>
+              <p className="text-xs text-slate-300 font-bold">إدارة استطلاعات رضا أصحاب المصلحة</p>
               <div className="h-20 bg-slate-800/80 rounded-xl flex items-center justify-center text-[10px] text-emerald-400 font-semibold border border-slate-700/20">
                 ✓ تم المزامنة بنجاح منذ ٥ دقائق
               </div>
@@ -222,7 +222,7 @@ export function ProductShowcaseSection() {
             <div className="bg-[#1E293B] text-slate-100 rounded-2xl p-5 border border-slate-700/50 shadow-md space-y-4">
               <div className="flex justify-between border-b border-slate-800 pb-2 text-xs text-slate-400">
                 <span>إدارة المستخدمين</span>
-                <span>me3yar.app/users</span>
+                <span>meyar.app/users</span>
               </div>
               <p className="text-xs text-slate-300 font-bold">صلاحيات الأقسام والفرق</p>
               <div className="h-20 bg-slate-800/80 rounded-xl flex items-center justify-center text-[10px] text-slate-400 font-semibold border border-slate-700/20">
@@ -234,7 +234,7 @@ export function ProductShowcaseSection() {
             <div className="bg-[#1E293B] text-slate-100 rounded-2xl p-5 border border-slate-700/50 shadow-md space-y-4">
               <div className="flex justify-between border-b border-slate-800 pb-2 text-xs text-slate-400">
                 <span>لوحة الأهداف</span>
-                <span>me3yar.app/objectives</span>
+                <span>meyar.app/objectives</span>
               </div>
               <p className="text-xs text-slate-300 font-bold">ربط المبادرات بالأهداف الإستراتيجية</p>
               <div className="h-20 bg-slate-800/80 rounded-xl flex items-center justify-center text-[10px] text-amber-400 font-semibold border border-slate-700/20">

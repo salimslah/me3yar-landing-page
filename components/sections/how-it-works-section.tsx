@@ -17,8 +17,8 @@ export function HowItWorksSection() {
     {
       number: '٠١',
       label: 'الخطوة الأولى',
-      title: 'ربط بيانات مؤسستك وتكامل الأنظمة',
-      description: 'اربط منصة معيار بأدواتك اليومية (Slack، Notion، Excel، أو قواعد البيانات) أو ارفع ملفاتك مباشرة لبناء قاعدة بيانات إستراتيجية موحدة في دقائق.',
+      title: 'بناء القاعدة الاستراتيجية المتكاملة',
+      description: 'أضف أهدافك ومبادراتك ومؤشراتك بسهولة لبناء قاعدة بيانات إستراتيجية موحدة في دقائق مع دعم كامل لجميع المنظورات.',
       visual: (
         <div className="w-full h-full flex items-center justify-center p-8 animate-fadeIn">
           <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center">
@@ -30,18 +30,18 @@ export function HowItWorksSection() {
             <div className="absolute w-full h-full rounded-full border border-dashed border-border/60 animate-[spin_40s_linear_infinite]"></div>
             <div className="absolute w-[70%] h-[70%] rounded-full border border-dashed border-primary/20 animate-[spin_25s_linear_infinite_reverse]"></div>
 
-            {/* Orbiting integrations */}
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-12 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
-              <span className="text-xs font-bold text-foreground">Excel</span>
+            {/* Orbiting Features */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 px-3 h-10 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+              <span className="text-[10px] font-bold text-foreground">الأهداف</span>
             </div>
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-12 h-12 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
-              <span className="text-xs font-bold text-[#4A154B]">Slack</span>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 h-10 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+              <span className="text-[10px] font-bold text-[#4A154B]">المبادرات</span>
             </div>
-            <div className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
-              <span className="text-xs font-bold text-foreground">Notion</span>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 px-3 h-10 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+              <span className="text-[10px] font-bold text-foreground">المخاطر</span>
             </div>
-            <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
-              <span className="text-xs font-bold text-primary">API</span>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 px-3 h-10 rounded-xl bg-white border border-border shadow-md flex items-center justify-center transform hover:scale-110 transition-transform">
+              <span className="text-[10px] font-bold text-primary">الاستطلاعات</span>
             </div>
 
             {/* Data flow dots */}

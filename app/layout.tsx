@@ -18,20 +18,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',
   description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة لضمان تحقيق أهداف منظمتك.',
-  generator: 'Me3yar Strategy Suite',
+  generator: 'Meyar Strategy Suite',
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
+    icon: '/icon.png',
     apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',
     description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة.',
-    url: 'https://me3yar.com',
-    siteName: 'معيار - Me3yar',
+    url: 'https://meyar.com',
+    siteName: 'معيار - Meyar',
     locale: 'ar_SA',
     type: 'website',
   },

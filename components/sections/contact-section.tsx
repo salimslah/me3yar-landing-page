@@ -107,7 +107,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-bold text-foreground">البريد الإلكتروني للتواصل</p>
-                    <p className="text-muted-foreground mt-0.5">support@me3yar.app</p>
+                    <p className="text-muted-foreground mt-0.5">support@meyar.app</p>
                   </div>
                 </div>
 

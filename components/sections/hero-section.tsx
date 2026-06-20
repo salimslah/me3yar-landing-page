@@ -113,7 +113,7 @@ export function HeroSection() {
 
           {/* Left side - Copy and CTAs */}
           <div className="order-first lg:order-last space-y-8 text-right">
-            <div className="space-y-6">
+            <div class="space-y-6">
               <div>
                 <span className="inline-block text-xs font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full tracking-wider shadow-sm">
                   منصة إدارة وتنفيذ الإستراتيجية المتكاملة
@@ -130,6 +130,15 @@ export function HeroSection() {
               <p className="text-lg sm:text-xl text-muted-foreground font-light leading-relaxed max-w-xl">
                 توقف عن بعثرة أهدافك في ملفات الإكسل التقليدية. منصة معيار تمنحك مساحة عمل متكاملة لتتبع خططك، مؤشرات الأداء (KPIs)، وإدارة المخاطر في لوحة تحكم فورية واحدة.
               </p>
+
+              {/* Powered by Badge */}
+              <div className="pt-2">
+                <a href="https://www.growth-side.co/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-sm border border-border/80 rounded-full shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer group">
+                  <span className="text-xs font-bold text-muted-foreground group-hover:text-foreground transition-colors">بإدارة وتطوير</span>
+                  <div className="w-px h-4 bg-border"></div>
+                  <img src="https://www.growth-side.co/logos/growth-side-brand.svg" alt="Growth Side" className="h-5 opacity-80 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
             </div>
 
             {/* Premium CTA Buttons */}
