@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/sections/hero-section'
+import { SectorsSection } from '@/components/sections/sectors-section'
 import { FeaturesSection } from '@/components/sections/features-section'
 import { HowItWorksSection } from '@/components/sections/how-it-works-section'
 // import { ProductShowcaseSection } from '@/components/sections/product-showcase-section'
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <HeroSection />
+      <SectorsSection />
       <FeaturesSection />
       <HowItWorksSection />
       {/* <ProductShowcaseSection /> */}

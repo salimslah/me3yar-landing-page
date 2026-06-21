@@ -133,10 +133,10 @@ export function HeroSection() {
 
               {/* Powered by Badge */}
               <div className="pt-2">
-                <a href="https://www.growth-side.co/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-sm border border-border/80 rounded-full shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer group">
-                  <span className="text-xs font-bold text-muted-foreground group-hover:text-foreground transition-colors">بإدارة وتطوير</span>
-                  <div className="w-px h-4 bg-border"></div>
-                  <img src="https://www.growth-side.co/logos/growth-side-brand.svg" alt="Growth Side" className="h-5 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <a href="https://www.growth-side.co/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-4 px-5 py-2.5 bg-white/80 backdrop-blur-sm border border-border/80 rounded-full shadow-sm hover:shadow-md hover:border-primary/20 transition-all cursor-pointer group">
+                  <span className="text-sm font-bold text-muted-foreground group-hover:text-foreground transition-colors">بإدارة وتطوير</span>
+                  <div className="w-px h-6 bg-border"></div>
+                  <img src="https://www.growth-side.co/logos/growth-side-brand.svg" alt="Growth Side" className="h-6 opacity-90 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
             </div>
