@@ -10,7 +10,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="relative w-32 h-10 flex-shrink-0">
               <Image 
-                src="/meyar-logo.png" 
+                src="/logo.jpeg" 
                 alt="Meyar Logo" 
                 fill 
                 className="object-contain mix-blend-multiply" 
@@ -26,9 +26,6 @@ export function Navbar() {
             </a>
             <a href="#how" className="text-foreground font-medium hover:text-primary transition-colors">
               كيف يعمل
-            </a>
-            <a href="#pricing" className="text-foreground font-medium hover:text-primary transition-colors">
-              الأسعار
             </a>
             <a href="#contact" className="text-foreground font-medium hover:text-primary transition-colors">
               اتصل بنا

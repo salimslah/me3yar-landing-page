@@ -5,7 +5,6 @@ import { HowItWorksSection } from '@/components/sections/how-it-works-section'
 // import { ProductShowcaseSection } from '@/components/sections/product-showcase-section'
 import { PricingSection } from '@/components/sections/pricing-section'
 import { FaqSection } from '@/components/sections/faq-section'
-import { ContactSection } from '@/components/sections/contact-section'
 import { CtaSection } from '@/components/sections/cta-section'
 import { Footer } from '@/components/footer'
 
@@ -17,9 +16,8 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorksSection />
       {/* <ProductShowcaseSection /> */}
-      <PricingSection />
+      {/* <PricingSection /> */}
       <FaqSection />
-      <ContactSection />
       <CtaSection />
       <Footer />
     </main>

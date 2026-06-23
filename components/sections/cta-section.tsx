@@ -1,75 +1,238 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { MapPin, Mail, Clock } from 'lucide-react'
 
 export function CtaSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+    orgSize: '١-٥٠ موظف'
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => {
+      setFormData({ name: '', email: '', company: '', message: '', orgSize: '١-٥٠ موظف' })
+      setSubmitted(false)
+    }, 4000)
+  }
+
   return (
-    <section className="w-full py-28 px-6 sm:px-8 bg-background relative overflow-hidden">
-      {/* Background radial highlights */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[300px] h-[300px] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="contact" className="w-full py-20 px-6 sm:px-8 bg-[#FAF9F6] relative overflow-hidden border-t border-border/40">
+      {/* Background gradients */}
+      <div className="absolute top-1/4 -right-48 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-1/4 -left-48 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        {/* Outer Premium Card */}
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1E4D38] via-[#2D7D5A] to-[#1C4632] border border-primary/20 p-12 sm:p-20 text-center space-y-10 shadow-2xl">
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* Header */}
+        <div className="mb-12 text-center space-y-4 max-w-2xl mx-auto">
+          <span className="inline-block text-xs font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full tracking-wider shadow-sm">
+            ابدأ التميز اليوم
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-tight">
+            جاهز لبناء وتنفيذ إستراتيجيتك بنجاح؟
+          </h2>
+          <p className="text-base text-muted-foreground font-light leading-relaxed">
+            سجل بياناتك الآن للحصول على عرض تجريبي مخصص لجهتكم ومناقشة متطلبات المواءمة وإدارة الأداء مع فريقنا المختص.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
-          {/* Decorative glowing gradient elements inside the card */}
-          <div className="absolute -top-32 -left-32 w-80 h-80 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-[#8B6F47]/20 rounded-full blur-3xl pointer-events-none"></div>
+          {/* Trust Badges & HQ Details (Right Side in RTL) */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 text-right order-first lg:order-last">
+            <div className="bg-white rounded-3xl border border-border/50 p-5 sm:p-6 shadow-xl space-y-6 flex-1 flex flex-col justify-between">
+              
+              {/* Trust Section */}
+              <div className="space-y-4">
+                <div className="border-b border-border/40 pb-3">
+                  <h3 className="text-lg font-bold text-foreground">الالتزام والمعايير الوطنية</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">نهتم بأمن وحوكمة بياناتكم بأعلى درجات المسؤولية</p>
+                </div>
 
-          {/* Grid pattern overlay inside card */}
-          <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+                <div className="space-y-3">
+                  {/* Trust Card 1 */}
+                  <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF9F6]/60 border border-border/30 hover:border-primary/20 transition-all duration-300">
+                    <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-foreground">السيادة والامتثال الأمني (CST & NCA)</h4>
+                      <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
+                        استضافة سحابية سعودية محلية بالكامل، متوافقة تماماً مع ضوابط الأمن السيبراني الوطنية.
+                      </p>
+                    </div>
+                  </div>
 
-          {/* Text Content */}
-          <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <span className="inline-block text-[11px] font-black text-secondary bg-white/10 backdrop-blur-md px-4 py-2 rounded-full tracking-wider border border-white/10 uppercase">
-              ابدأ التميز اليوم
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-              جاهز لبناء وتنفيذ <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-secondary via-[#FFE4B5] to-secondary bg-clip-text text-transparent">
-                إستراتيجيتك بنجاح؟
-              </span>
-            </h2>
-            <p className="text-emerald-100/80 text-base sm:text-lg lg:text-xl font-light leading-relaxed">
-              انضم إلى المؤسسات الذكية والفرق التنفيذية التي اختارت الوضوح والمحاذاة الشاملة. ابدأ معنا بخطوات بسيطة لتحويل أهدافك إلى نتائج حقيقية وملموسة.
-            </p>
+                  {/* Trust Card 2 */}
+                  <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF9F6]/60 border border-border/30 hover:border-primary/20 transition-all duration-300">
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-foreground">عزل البيانات والتشفير التام</h4>
+                      <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
+                        تشفير البيانات الحساسة وعزل قواعد البيانات بشكل كامل لضمان أقصى درجات السرية.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct Info & Location */}
+              <div className="pt-4 border-t border-border/40 space-y-4">
+                <div className="flex items-center gap-3 text-[11px]">
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">المقر الرئيسي</p>
+                    <p className="text-muted-foreground mt-0.5">الرياض، المملكة العربية السعودية</p>
+                  </div>
+                </div>
+
+                <a href="mailto:support@meyar.app" className="flex items-center gap-3 text-[11px] hover:bg-[#FAF9F6] p-1.5 -m-1.5 rounded-2xl transition-colors group">
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground group-hover:text-primary transition-colors">البريد الإلكتروني للتواصل</p>
+                    <p className="text-muted-foreground mt-0.5 underline decoration-primary/30">
+                      support@meyar.app
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
           </div>
 
-          {/* Primary Action Button (Moving to subscription/sign up website) */}
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-            <a
-              href={process.env.NEXT_PUBLIC_APP_URL || '#'}
-              className="w-full sm:w-auto px-10 py-4 bg-secondary text-white font-extrabold rounded-2xl hover:bg-secondary/95 hover:shadow-xl hover:shadow-secondary/20 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 text-center shadow-lg cursor-pointer"
-            >
-              اشترك في المنصة الآن
-            </a>
-            <a
-              href={process.env.NEXT_PUBLIC_APP_URL || '#'}
-              className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-2xl hover:bg-white/20 active:scale-[0.98] transition-all duration-200 text-center cursor-pointer"
-            >
-              طلب عرض تجريبي
-            </a>
+          {/* Form Card (Left Side in RTL) */}
+          <div className="lg:col-span-7 relative order-last lg:order-first">
+            {/* Glow backdrop behind card */}
+            <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-tr from-primary/10 via-secondary/10 to-transparent blur-xl pointer-events-none"></div>
+
+            <div className="relative bg-white rounded-[2rem] border border-border/50 p-6 sm:p-8 shadow-2xl text-right h-full flex flex-col justify-center">
+              {submitted ? (
+                <div className="py-12 text-center space-y-4 animate-fadeIn">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-100 flex items-center justify-center text-emerald-600 mx-auto">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-black text-foreground">تم الإرسال بنجاح!</h3>
+                  <p className="text-muted-foreground text-xs max-w-sm mx-auto leading-relaxed">
+                    شكراً لتواصلك معنا. سنقوم بمراجعة استفسارك والتواصل معك عبر البريد الإلكتروني في غضون ٢٤ ساعة.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {/* Name Input */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="name" className="text-[11px] font-bold text-foreground">الاسم الكريم</label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="الاسم الكامل"
+                        className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground placeholder:text-muted-foreground/55"
+                      />
+                    </div>
+
+                    {/* Email Input */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="email" className="text-[11px] font-bold text-foreground">البريد الإلكتروني للمنظمة</label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="name@company.com"
+                        className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground placeholder:text-muted-foreground/55 text-left"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {/* Company Input */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="company" className="text-[11px] font-bold text-foreground">الجهة / الشركة</label>
+                      <input
+                        type="text"
+                        id="company"
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="اسم المنظمة أو الجهة"
+                        className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground placeholder:text-muted-foreground/55"
+                      />
+                    </div>
+
+                    {/* Organization Size */}
+                    <div className="space-y-1.5">
+                      <label htmlFor="orgSize" className="text-[11px] font-bold text-foreground">
+                        حجم الجهة (عدد الموظفين)
+                      </label>
+                      <select
+                        id="orgSize"
+                        value={formData.orgSize}
+                        onChange={(e) => setFormData({ ...formData, orgSize: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground"
+                      >
+                        <option>١-٥٠ موظف</option>
+                        <option>٥١-٢٠٠ موظف</option>
+                        <option>٢٠١-٥٠٠ موظف</option>
+                        <option>أكثر من ٥٠٠ موظف</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Message Input */}
+                  <div className="space-y-1.5">
+                    <label htmlFor="message" className="text-[11px] font-bold text-foreground">
+                      متطلبات إضافية لمشروعكم
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={3}
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="اذكر أي متطلبات خاصة بالربط، التخصيص، أو نوع الدعم الفني المطلوب..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground placeholder:text-muted-foreground/55 resize-none"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-1">
+                    <button
+                      type="submit"
+                      className="w-full py-3 bg-primary text-white font-extrabold rounded-xl hover:bg-primary/95 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-[0.99] duration-200 text-center cursor-pointer text-xs"
+                    >
+                      إرسال الطلب
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
 
-          {/* Trust Checkmarks */}
-          <div className="relative z-10 pt-4 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-emerald-100/70 border-t border-white/10">
-            <div className="flex items-center gap-2">
-              <span className="text-secondary font-black">✓</span>
-              <span>تجربة مجانية لمدة ١٤ يوماً</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-secondary font-black">✓</span>
-              <span>إعداد وتكامل سريع خلال دقائق</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-secondary font-black">✓</span>
-              <span>لا تطلب بطاقة ائتمان للتسجيل</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
   )
 }
-

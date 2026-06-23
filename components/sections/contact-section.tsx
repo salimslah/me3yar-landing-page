@@ -145,40 +145,6 @@ export function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Topic Selector Capsule Toggle */}
-                  <div className="space-y-2">
-                    <label className="text-[11px] font-bold text-foreground">موضوع الاستفسار</label>
-                    <div className="bg-muted/40 p-1 rounded-xl flex gap-1 border border-border/40">
-                      <button
-                        type="button"
-                        onClick={() => setTopic('quote')}
-                        className={`flex-1 py-2 text-center text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
-                          topic === 'quote' ? 'bg-primary text-white shadow-sm' : 'text-muted-foreground hover:bg-muted/50'
-                        }`}
-                      >
-                        طلب عرض سعر
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setTopic('support')}
-                        className={`flex-1 py-2 text-center text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
-                          topic === 'support' ? 'bg-primary text-white shadow-sm' : 'text-muted-foreground hover:bg-muted/50'
-                        }`}
-                      >
-                        دعم فني وتكامل
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setTopic('general')}
-                        className={`flex-1 py-2 text-center text-[11px] font-bold rounded-lg transition-all cursor-pointer ${
-                          topic === 'general' ? 'bg-primary text-white shadow-sm' : 'text-muted-foreground hover:bg-muted/50'
-                        }`}
-                      >
-                        استفسار عام
-                      </button>
-                    </div>
-                  </div>
-
                   <div className="grid sm:grid-cols-2 gap-4">
                     {/* Name Input */}
                     <div className="space-y-1.5">
@@ -224,40 +190,29 @@ export function ContactSection() {
                       />
                     </div>
 
-                    {/* Conditional Input based on Topic */}
+                    {/* Organization Size */}
                     <div className="space-y-1.5">
                       <label htmlFor="orgSize" className="text-[11px] font-bold text-foreground">
-                        {topic === 'quote' ? 'حجم الجهة (عدد الموظفين)' : 'أولوية الاستفسار'}
+                        حجم الجهة (عدد الموظفين)
                       </label>
-                      {topic === 'quote' ? (
-                        <select
-                          id="orgSize"
-                          value={formData.orgSize}
-                          onChange={(e) => setFormData({ ...formData, orgSize: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground"
-                        >
-                          <option>١-٥٠ موظف</option>
-                          <option>٥١-٢٠٠ موظف</option>
-                          <option>٢٠١-٥٠٠ موظف</option>
-                          <option>أكثر من ٥٠٠ موظف</option>
-                        </select>
-                      ) : (
-                        <select
-                          id="priority"
-                          className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground"
-                        >
-                          <option>عادي</option>
-                          <option>متوسط</option>
-                          <option>عاجل</option>
-                        </select>
-                      )}
+                      <select
+                        id="orgSize"
+                        value={formData.orgSize}
+                        onChange={(e) => setFormData({ ...formData, orgSize: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground"
+                      >
+                        <option>١-٥٠ موظف</option>
+                        <option>٥١-٢٠٠ موظف</option>
+                        <option>٢٠١-٥٠٠ موظف</option>
+                        <option>أكثر من ٥٠٠ موظف</option>
+                      </select>
                     </div>
                   </div>
 
                   {/* Message Input */}
                   <div className="space-y-1.5">
                     <label htmlFor="message" className="text-[11px] font-bold text-foreground">
-                      {topic === 'quote' ? 'متطلبات إضافية لمشروعكم' : 'تفاصيل الرسالة'}
+                      متطلبات إضافية لمشروعكم
                     </label>
                     <textarea
                       id="message"
@@ -265,11 +220,7 @@ export function ContactSection() {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder={
-                        topic === 'quote'
-                          ? 'اذكر أي متطلبات خاصة بالربط، التخصيص، أو نوع الدعم الفني المطلوب...'
-                          : 'كيف يمكننا مساعدتك اليوم؟'
-                      }
+                      placeholder="اذكر أي متطلبات خاصة بالربط، التخصيص، أو نوع الدعم الفني المطلوب..."
                       className="w-full px-4 py-2.5 rounded-xl bg-muted/30 border border-border/50 focus:bg-white focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all text-xs outline-none text-foreground placeholder:text-muted-foreground/55 resize-none"
                     />
                   </div>
@@ -280,7 +231,7 @@ export function ContactSection() {
                       type="submit"
                       className="w-full py-3 bg-primary text-white font-extrabold rounded-xl hover:bg-primary/95 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-[0.99] duration-200 text-center cursor-pointer text-xs"
                     >
-                      إرسال الاستفسار
+                      إرسال الطلب
                     </button>
                   </div>
                 </form>

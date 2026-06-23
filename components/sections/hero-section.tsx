@@ -113,7 +113,7 @@ export function HeroSection() {
 
           {/* Left side - Copy and CTAs */}
           <div className="order-first lg:order-last space-y-8 text-right">
-            <div class="space-y-6">
+            <div className="space-y-6">
               <div>
                 <span className="inline-block text-xs font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full tracking-wider shadow-sm">
                   منصة إدارة وتنفيذ الإستراتيجية المتكاملة

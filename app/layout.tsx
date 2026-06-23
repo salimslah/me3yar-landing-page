@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   description: 'منصة معيار تمكنك من ترجمة إستراتيجيتك إلى واقع ملموس. تتبع مؤشرات الأداء (KPIs)، أدار المبادرات والمشاريع، وقيم المخاطر في لوحة تحكم فورية واحدة لضمان تحقيق أهداف منظمتك.',
   generator: 'Meyar Strategy Suite',
   icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
+    icon: '/logo.jpeg',
+    apple: '/logo.jpeg',
   },
   openGraph: {
     title: 'معيار | منصة الأداء والإدارة الإستراتيجية المتكاملة',

@@ -1,4 +1,4 @@
-'use client'
+import Link from 'next/link'
 
 export function Footer() {
   return (
@@ -18,18 +18,8 @@ export function Footer() {
             <h4 className="font-medium text-foreground">المنتج</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   المميزات
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  الأسعار
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  الأمان
                 </a>
               </li>
             </ul>
@@ -40,17 +30,7 @@ export function Footer() {
             <h4 className="font-medium text-foreground">الشركة</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  حول
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  المدونة
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   اتصل بنا
                 </a>
               </li>
@@ -62,19 +42,14 @@ export function Footer() {
             <h4 className="font-medium text-foreground">قانوني</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   الخصوصية
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   الشروط
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  ملفات تعريف الارتباط
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
