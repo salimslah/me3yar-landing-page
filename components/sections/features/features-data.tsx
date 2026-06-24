@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 
-interface Feature {
+export interface Feature {
   tag: string
   title: string
   description: string
@@ -15,7 +13,7 @@ interface Feature {
   graphic: React.ReactNode
 }
 
-const features: Feature[] = [
+export const featuresData: Feature[] = [
   {
     tag: 'بطاقة الأداء المتوازن (BSC)',
     title: 'ترجمة إستراتيجيتك إلى مؤشرات أداء دقيقة',
@@ -39,7 +37,6 @@ const features: Feature[] = [
           <rect x="15" y="-65" width="50" height="50" rx="16" fill="url(#gold-grad)" />
           <rect x="-65" y="15" width="50" height="50" rx="16" fill="url(#gold-grad)" />
           <rect x="15" y="15" width="50" height="50" rx="16" fill="url(#gold-grad)" />
-          {/* Inner details for premium look */}
           <circle cx="-40" cy="-40" r="6" fill="#D4A574" opacity="0.3" />
           <circle cx="40" cy="-40" r="6" fill="#D4A574" opacity="0.3" />
           <circle cx="-40" cy="40" r="6" fill="#D4A574" opacity="0.3" />
@@ -70,7 +67,6 @@ const features: Feature[] = [
             <stop offset="100%" stopColor="#4A7F9F" stopOpacity="0.05" />
           </linearGradient>
         </defs>
-        {/* Abstract shapes matching the image's top-right style */}
         <path d="M40 40 C 40 90, 90 90, 90 40 Z" fill="url(#blue-grad-1)" transform="translate(10, 20)" />
         <rect x="110" y="20" width="50" height="50" rx="16" fill="url(#blue-grad-2)" />
         <rect x="40" y="90" width="50" height="50" rx="16" fill="url(#blue-grad-2)" />
@@ -96,7 +92,6 @@ const features: Feature[] = [
             <stop offset="100%" stopColor="#D2B5FA" stopOpacity="0.05" />
           </linearGradient>
         </defs>
-        {/* Curving, overlapping ribbon path inspired by the bottom-left purple graphic */}
         <path d="M30 50 Q 80 50 100 100 T 170 150 Q 120 150 100 100 T 30 50 Z" fill="url(#purple-grad)" />
         <path d="M170 50 Q 120 50 100 100 T 30 150 Q 80 150 100 100 T 170 50 Z" fill="url(#purple-grad)" opacity="0.7" />
       </svg>
@@ -129,74 +124,3 @@ const features: Feature[] = [
     )
   }
 ]
-
-export function FeaturesSection() {
-  return (
-    <section id="features" className="w-full py-24 px-6 sm:px-8 bg-background relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
-
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="mb-20 text-center space-y-4">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
-            ضاعف كفاءة سير عملك
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
-            جميع الأدوات لإدارة الإستراتيجية والأداء والمبادرات في لوحة قيادة متكاملة.
-          </p>
-        </div>
-
-        {/* 2x2 Responsive Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <a
-              key={index}
-              href={process.env.NEXT_PUBLIC_APP_URL || '#'}
-              className={`group block relative ${feature.bgClass} rounded-3xl border border-border/60 p-8 sm:p-10 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 min-h-[340px] text-right`}
-            >
-              {/* Graphic container (absolute positioned on the left/start side to prevent overlapping with RTL text) */}
-              <div className="absolute bottom-0 left-0 pointer-events-none select-none transition-transform duration-500 group-hover:scale-105 group-hover:-translate-x-2">
-                {feature.graphic}
-              </div>
-
-              {/* Card Content */}
-              <div className="relative z-10 space-y-6 max-w-[75%] sm:max-w-[70%]">
-                {/* Tag */}
-                <div>
-                  <span className={`inline-block text-xs font-bold ${feature.tagBgClass} ${feature.tagTextClass} px-3 py-1.5 rounded-full shadow-sm`}>
-                    {feature.tag}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight tracking-tight">
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-                  {feature.description}
-                </p>
-              </div>
-
-              {/* Link at bottom */}
-              <div className="relative z-10 pt-6 mt-auto">
-                <div
-                  className={`inline-flex items-center gap-1.5 text-sm font-bold ${feature.linkColorClass} transition-colors group/link`}
-                >
-                  <span>{feature.linkText}</span>
-                  <span className="inline-block transition-transform group-hover/link:-translate-x-1 duration-200">
-                    ←
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-

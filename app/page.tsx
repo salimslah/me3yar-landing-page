@@ -1,11 +1,11 @@
-import { HeroSection } from '@/components/sections/hero-section'
-import { SectorsSection } from '@/components/sections/sectors-section'
-import { FeaturesSection } from '@/components/sections/features-section'
-import { HowItWorksSection } from '@/components/sections/how-it-works-section'
+import { HeroSection } from '@/components/sections/hero'
+import { SectorsSection } from '@/components/sections/sectors'
+import { FeaturesSection } from '@/components/sections/features'
+import { HowItWorksSection } from '@/components/sections/how-it-works'
 // import { ProductShowcaseSection } from '@/components/sections/product-showcase-section'
 import { PricingSection } from '@/components/sections/pricing-section'
-import { FaqSection } from '@/components/sections/faq-section'
-import { CtaSection } from '@/components/sections/cta-section'
+import { FaqSection } from '@/components/sections/faq'
+import { CtaSection } from '@/components/sections/cta'
 import { Footer } from '@/components/footer'
 
 export default function Home() {

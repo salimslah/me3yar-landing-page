@@ -1,0 +1,15 @@
+{
+  "catalog": {
+    "name": "معيار API Catalog",
+    "description": "API catalog for Meyar landing page services",
+    "apis": [
+      {
+        "id": "send-email",
+        "name": "Send Email API",
+        "description": "Send contact/demo requests",
+        "endpoint": "/api/send-email",
+        "method": "POST"
+      }
+    ]
+  }
+}

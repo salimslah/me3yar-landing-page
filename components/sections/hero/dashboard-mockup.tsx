@@ -1,0 +1,100 @@
+'use client'
+
+import React from 'react'
+
+export function DashboardMockup() {
+  return (
+    <div className="relative">
+      {/* Floating Widget 1 (Top Left in RTL) */}
+      <div className="absolute -top-6 -left-6 z-20 bg-white/90 backdrop-blur-md rounded-2xl border border-border/80 p-4 shadow-xl flex items-center gap-3 animate-[bounce_5s_infinite_ease-in-out]">
+        <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
+          ↑
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] text-muted-foreground font-bold leading-none">معدل الإنجاز</p>
+          <p className="text-sm font-black text-foreground mt-1">+١٢.٤٪ هذا الشهر</p>
+        </div>
+      </div>
+
+      {/* Floating Widget 2 (Bottom Right in RTL) */}
+      <div className="absolute -bottom-6 -right-6 z-20 bg-white/90 backdrop-blur-md rounded-2xl border border-border/80 p-4 shadow-xl flex items-center gap-3 animate-[bounce_6s_infinite_ease-in-out_1s]">
+        <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 font-bold">
+          ⚠
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] text-muted-foreground font-bold leading-none">إدارة المخاطر</p>
+          <p className="text-sm font-black text-foreground mt-1">لا توجد مخاطر حرجة</p>
+        </div>
+      </div>
+
+      {/* Main Mockup Card */}
+      <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl border border-border/60 shadow-2xl overflow-hidden group hover:shadow-primary/5 hover:border-primary/25 transition-all duration-500">
+        {/* Gradient accent top */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+
+        <div className="p-8 sm:p-10 space-y-8">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-border/40 pb-5">
+            <div className="space-y-1">
+              <p className="text-[10px] font-black text-primary tracking-widest bg-primary/10 px-2.5 py-1 rounded-md inline-block">
+                لوحة التحكم الحية
+              </p>
+              <h3 className="text-2xl font-black text-foreground tracking-tight">بطاقة الأداء الإستراتيجي</h3>
+            </div>
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></div>
+          </div>
+
+          {/* Main metric with modern design */}
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <div className="flex items-baseline justify-between">
+                <span className="text-sm font-bold text-muted-foreground">معدل تنفيذ الإستراتيجية العام</span>
+                <span className="text-4xl font-black text-primary">٨٧.٥٪</span>
+              </div>
+              <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+                <div 
+                  className="absolute inset-y-0 right-0 bg-gradient-to-l from-primary to-primary/80 rounded-full transition-all duration-500 group-hover:from-primary group-hover:to-primary/70" 
+                  style={{ width: '87.5%' }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Stats grid - modern minimal style */}
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border/40">
+              <div className="space-y-2 p-4 rounded-2xl hover:bg-muted/40 transition-colors border border-transparent hover:border-border/40">
+                <p className="text-xs text-muted-foreground font-bold">الأهداف المتوافقة</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-black text-foreground">٢٣</span>
+                  <span className="text-sm text-muted-foreground">/ ٢٤</span>
+                </div>
+              </div>
+              <div className="space-y-2 p-4 rounded-2xl hover:bg-muted/40 transition-colors border border-transparent hover:border-border/40">
+                <p className="text-xs text-muted-foreground font-bold">المبادرات قيد الإنجاز</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-black text-primary">١٨</span>
+                  <span className="text-xs text-muted-foreground font-semibold">مبادرة نشطة</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mini status visual distribution */}
+            <div className="pt-4 border-t border-border/40">
+              <p className="text-xs text-muted-foreground font-bold mb-4">التوزيع العام للمنظورات</p>
+              <div className="flex items-end gap-3 h-16">
+                <div className="flex-1 h-full bg-primary/10 rounded-xl relative overflow-hidden group/bar">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary to-primary/70 rounded-xl transition-all duration-300 group-hover/bar:brightness-105" style={{ height: '70%' }}></div>
+                </div>
+                <div className="flex-1 h-full bg-secondary/10 rounded-xl relative overflow-hidden group/bar">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-secondary to-secondary/70 rounded-xl transition-all duration-300 group-hover/bar:brightness-105" style={{ height: '85%' }}></div>
+                </div>
+                <div className="flex-1 h-full bg-accent/10 rounded-xl relative overflow-hidden group/bar">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-accent to-accent/70 rounded-xl transition-all duration-300 group-hover/bar:brightness-105" style={{ height: '45%' }}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
